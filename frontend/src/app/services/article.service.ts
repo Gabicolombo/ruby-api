@@ -21,12 +21,12 @@ export class ArticleService {
       this.httpOptions);
   }
 
-  findArticle(){
-
+  findArticle(id: any){
+    return this.http.get(`${this.url}/api/v1/articles/${id}`);
   }
 
-  updateArticle(){
-
+  updateArticle(body: any, id: any){
+    return this.http.put(`${this.url}/api/v1/articles/${id}`, body, this.httpOptions);
   }
 
   deleteArticle(id: any){
