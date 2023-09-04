@@ -20,7 +20,13 @@ export class ListarticlesComponent {
     this.articles = this.articleService.listArticle()
       .subscribe(article => {
         this.articles = article;
-        console.log(this.articles);
+      })
+  }
+
+  deleteArticle(id: any){
+    this.articleService.deleteArticle(id)
+      .subscribe(article => {
+        console.log('Article has been deleted');
       })
   }
 
